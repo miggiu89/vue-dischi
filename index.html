@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="root" >
+        <div class="header-nav">
+            <img src="img/logo.png" alt="logo-spotify">
+        </div>
+        <div class="box-card" v-if="albums.length">
+            <div class="card" v-for="album in albums">
+                <img :src="album.poster" alt="">
+                <h3>{{ album.title }}</h3>
+                <h6>{{ album.author }}</h6>
+                <h6>{{ album.year }}</h6>
+
+
+            </div>
+            
+
+            
+            
+
+        </div>
+
+
+
+
+        
+    </div>
+
+
+    <script src="vue/script.js"></script>
+</body>
+</html>
