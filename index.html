@@ -10,30 +10,27 @@
     <title>Document</title>
 </head>
 <body>
+
     <div id="root" >
-        <div class="header-nav">
+        <div class="header-nav" v-if="albums.length">
             <img src="img/logo.png" alt="logo-spotify">
+            <select v-model="valType">
+                <option value=""> Tutti i generi</option>
+                <option v-for="type in musicType" :value="type">{{ type }}</option>
+
+            </select>
         </div>
         <div class="box-card" v-if="albums.length">
-            <div class="card" v-for="album in albums">
-                <img :src="album.poster" alt="">
+            <div class="card" v-for="album in albums" v-if="album.genre == valType || valType == ''">
+                <img :src="album.poster" :alt="album.title">
                 <h3>{{ album.title }}</h3>
                 <h6>{{ album.author }}</h6>
                 <h6>{{ album.year }}</h6>
 
 
             </div>
-            
-
-            
-            
-
         </div>
-
-
-
-
-        
+       
     </div>
 
 
